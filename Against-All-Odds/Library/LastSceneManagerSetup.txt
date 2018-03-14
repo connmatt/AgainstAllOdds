@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/Scenes/GitTestScene.unity
-  isLoaded: 1
-  isActive: 1
