@@ -4,6 +4,7 @@ Grabbing repository:
 Every other command must be done in the folder created from the clone command.
 Updating repository:
 	git pull
+Always pull repository before working!
 
 Getting status (check this before pushing!)
 	git status
