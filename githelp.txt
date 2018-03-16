@@ -1,0 +1,15 @@
+Grabbing repository:
+	git clone https://github.com/connmatt/AgainstAllOdds
+
+Every other command must be done in the folder created from the clone command.
+Updating repository:
+	git pull
+
+Getting status (check this before pushing!)
+	git status
+Red means not added, green means added
+
+Pushing to repository:
+	git add .
+	git commit -m "Put a message here"
+	git push
