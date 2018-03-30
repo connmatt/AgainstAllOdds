@@ -176,8 +176,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1882710138546504}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25.453487, y: 16.627663, z: 11.635961}
-  m_LocalScale: {x: 0.1748096, y: 1, z: 0.32930535}
+  m_LocalPosition: {x: 21.292, y: 20.11, z: 11.93}
+  m_LocalScale: {x: 0.38938, y: 1, z: 0.32930535}
   m_Children: []
   m_Father: {fileID: 4939351950957590}
   m_RootOrder: 7
@@ -339,7 +339,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b981d5d638ea412408ca3bb0c59ee02f, type: 2}
+  - {fileID: 2100000, guid: f04e41161a9179445b213036df5c705b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -638,7 +638,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1882710138546504}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 31.042652, y: 1, z: 24.392042}
@@ -678,3 +678,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27f8445c5bbbd764e9356590227bb92e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneName: TransitionScene
