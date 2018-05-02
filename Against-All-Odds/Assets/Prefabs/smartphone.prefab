@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 4717887507390182}
   - component: {fileID: 33876693957189258}
   - component: {fileID: 23136804176431804}
+  - component: {fileID: 114850548312041072}
   m_Layer: 0
   m_Name: smartphone
   m_TagString: phone
@@ -1387,6 +1388,21 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114850548312041072
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1191933010613832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7a742aac747e504987a2195e81113c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phoneObject: {fileID: 23136804176431804}
+  cloudPhoneBackground: {fileID: 2100000, guid: d4fc12dc9beafa44e9f614b7b6ef70c7,
+    type: 2}
+  backgroundNo2: {fileID: 2100000, guid: 2b7cfcc7b231de54fa58cab4b1a24e66, type: 2}
 --- !u!124 &124633225719021616
 Behaviour:
   m_ObjectHideFlags: 1

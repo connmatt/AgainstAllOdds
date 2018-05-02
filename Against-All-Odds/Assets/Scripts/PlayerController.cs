@@ -26,14 +26,14 @@ public class PlayerController : MonoBehaviour {
             smartphone.SetActive(true);
             phoneCamera.SetActive(true);
             phoneCanvas.SetActive(true);
-            Debug.Log(smartphone.activeSelf);
+            //Debug.Log(smartphone.activeSelf);
         }
         else if(paused == false)
         {
             smartphone.SetActive(false);
             phoneCamera.SetActive(false);
             phoneCanvas.SetActive(false);
-            Debug.Log(smartphone.activeSelf);
+            //Debug.Log(smartphone.activeSelf);
         }
 	}
 }
