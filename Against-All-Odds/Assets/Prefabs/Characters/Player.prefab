@@ -21,11 +21,12 @@ GameObject:
   - component: {fileID: 4601942370470776}
   - component: {fileID: 143343695446326866}
   - component: {fileID: 114153822347858810}
+  - component: {fileID: 114948089965029444}
   - component: {fileID: 54852964131045258}
   - component: {fileID: 82188735230693710}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67,14 +68,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1229330490790442}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.27, y: 1.04, z: 7.4}
+  m_LocalRotation: {x: -0, y: -0.68976367, z: -0, w: 0.7240346}
+  m_LocalPosition: {x: 21, y: 1.19, z: 95.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4450534812964630}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -87.22301, z: 0}
 --- !u!20 &20937055557384932
 Camera:
   m_ObjectHideFlags: 1
@@ -315,6 +316,23 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
+--- !u!114 &114948089965029444
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1229330490790442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef9b411ddb941d54ca20c6dfe967e3ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smartphone: {fileID: 0}
+  phoneCamera: {fileID: 0}
+  phoneCanvas: {fileID: 0}
+  paused: 0
+  sanity: 0
+  health: 0
 --- !u!124 &124062883903124366
 Behaviour:
   m_ObjectHideFlags: 1

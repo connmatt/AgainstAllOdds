@@ -13,4 +13,12 @@ public class WendigoScript : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Player") {
+            other.gameObject.GetComponent<PlayerController>().changeHealth(-15);
+        }
+    }
+
 }

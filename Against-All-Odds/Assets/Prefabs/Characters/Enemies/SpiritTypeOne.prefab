@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 23165960901645196}
   - component: {fileID: 114700513117378928}
   - component: {fileID: 54315761077992036}
+  - component: {fileID: 114154770917145902}
+  - component: {fileID: 114223536929290220}
   m_Layer: 0
   m_Name: SpiritTypeOne
   m_TagString: Untagged
@@ -38,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1763397297228466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.66, y: 12.62567, z: 94}
+  m_LocalPosition: {x: 13.99, y: 1.66, z: 94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,6 +102,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114154770917145902
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1763397297228466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c20aac2edccbd94395ce0989fe8c052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  speed: 0
+--- !u!114 &114223536929290220
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1763397297228466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef501097fa5f5ea4eaf3980efba36801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114700513117378928
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -118,7 +144,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1763397297228466}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
