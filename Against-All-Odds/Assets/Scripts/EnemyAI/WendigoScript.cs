@@ -16,7 +16,7 @@ public class WendigoScript : MonoBehaviour {
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Player") {
+        if (other.gameObject.transform.tag == "Player") {
             other.gameObject.GetComponent<PlayerController>().changeHealth(-15);
         }
     }

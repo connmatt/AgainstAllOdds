@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour {
         //smartphone = GameObject.FindGameObjectWithTag("phone");
         //phoneCanvas= GameObject.FindGameObjectWithTag("phoneCanvas");
         //phoneCamera = GameObject.FindGameObjectWithTag("phoneCamera");
+        GameObject.Find("Sanity").GetComponent<UnityEngine.UI.Text>().text = "Sanity: " + sanity;
+        GameObject.Find("Health").GetComponent<UnityEngine.UI.Text>().text = "Health: " + health;
     }
 	
 	// Update is called once per frame
@@ -44,13 +46,19 @@ public class PlayerController : MonoBehaviour {
 
     public void changeSanity(int s)
     {
-        sanity += s;
-        Debug.Log("Player sanity is now " + sanity);
+        if (sanity < 100)
+        {
+            sanity += s;
+            GameObject.Find("Sanity").GetComponent<UnityEngine.UI.Text>().text = "Sanity: " + sanity;
+        }
     }
 
     public void changeHealth(int h)
     {
-        health += h;
-        Debug.Log("Player health is now " + health);
+        if (health>0)
+        {
+            health += h;
+            GameObject.Find("Health").GetComponent<UnityEngine.UI.Text>().text = "Health: " + health;
+        }
     }
 }

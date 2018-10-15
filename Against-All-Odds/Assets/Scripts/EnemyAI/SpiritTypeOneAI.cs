@@ -8,7 +8,8 @@ public class SpiritTypeOneAI : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         angle = 0.0f;
-	}
+        gameObject.GetComponent<Renderer>().material.color = new Color(gameObject.GetComponent<Renderer>().material.color.r, gameObject.GetComponent<Renderer>().material.color.g, gameObject.GetComponent<Renderer>().material.color.b, 0.5f);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -22,10 +23,6 @@ public class SpiritTypeOneAI : MonoBehaviour {
         if (other.transform.tag == "Player")
         {
             other.GetComponent<PlayerController>().changeSanity(25);
-        }
-        else
-        {
-            Debug.Log("Spirit's broke");
         }
     }
 }
