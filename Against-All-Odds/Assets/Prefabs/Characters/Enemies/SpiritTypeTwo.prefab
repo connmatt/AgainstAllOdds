@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114142662428871892}
   m_Layer: 0
   m_Name: SpiritTypeTwo
-  m_TagString: Untagged
+  m_TagString: SpiritTypeTwo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,6 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98b2a124e08666c4984808f5ec515a00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  angle: 0
+  player: {fileID: 0}
 --- !u!135 &135311960509063436
 SphereCollider:
   m_ObjectHideFlags: 1
