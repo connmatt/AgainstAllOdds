@@ -44,13 +44,12 @@ public class PlayerController : MonoBehaviour {
         }
 
         RaycastHit hit;
-        if (Physics.Raycast(new Ray(transform.position, transform.forward), out hit, 5.0f))
+        if (Physics.SphereCast(new Ray(transform.position, transform.forward), 5.0f, out hit, 1.0f))
         {
             if (hit.collider.tag == "SpiritTypeTwo"&&!hit.collider.gameObject.GetComponent<SpiritTypeTwoScript>().hasSeen)
             {
                 changeSanity(5);
                 hit.collider.gameObject.GetComponent<SpiritTypeTwoScript>().hasSeen = true;
-                Destroy(hit.collider.gameObject);
             }
         }
     }

@@ -2,21 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpiritTypeOneAI : MonoBehaviour {
+public class SpiritTypeOneAI : EnemyMoveScript {
 
     float angle;
 	// Use this for initialization
-	void Start () {
+	protected override void Start () {
+        base.Start();
         angle = 0.0f;
         gameObject.GetComponent<Renderer>().material.color = new Color(gameObject.GetComponent<Renderer>().material.color.r, gameObject.GetComponent<Renderer>().material.color.g, gameObject.GetComponent<Renderer>().material.color.b, 0.5f);
+        moveDistance(0, 0.5f, 0);
     }
 	
 	// Update is called once per frame
-	void Update () {
+	protected override void Update () {
+        base.Update();
         angle += 0.05f;
-        transform.position = new Vector3(transform.position.x, 
-                                        transform.position.y + Mathf.Cos(angle) * 0.01f, 
-                                        transform.position.z);
+        moveDistance(0, Mathf.Cos(angle) * 0.01f, 0);
 	}
 
     private void OnTriggerEnter(Collider other) {

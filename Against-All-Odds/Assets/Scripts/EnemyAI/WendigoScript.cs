@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WendigoScript : MonoBehaviour {
+public class WendigoScript : EnemyMoveScript {
 
 	// Use this for initialization
-	void Start () {
-		
+	protected override void Start () {
+        base.Start();
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	protected override void Update () {
+        base.Update();
 	}
 
     private void OnCollisionEnter(Collision other)

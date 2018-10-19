@@ -2,34 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpiritTypeTwoScript : MonoBehaviour {
+public class SpiritTypeTwoScript : EnemyMoveScript {
 
     public float angle;
     public GameObject player;
     public bool hasSeen;
 
 	// Use this for initialization
-	void Start () {
+	protected override void Start () {
+        base.Start();
         gameObject.GetComponent<Renderer>().material.color = new Color(gameObject.GetComponent<Renderer>().material.color.r, gameObject.GetComponent<Renderer>().material.color.g, gameObject.GetComponent<Renderer>().material.color.b, 0.5f);
-        player = GameObject.Find("Player");
+        moveDistance(0, 0.5f, 0);
         hasSeen = false;
     }
 	
 	// Update is called once per frame
-	void Update () {
+	protected override void Update () {
+        base.Update();
         angle += 0.05f;
-        transform.position = new Vector3(transform.position.x,
-                                        transform.position.y + Mathf.Cos(angle) * 0.01f,
-                                        transform.position.z);
+        moveDistance(0, Mathf.Cos(angle) * 0.01f, 0);
+        if (hasSeen)
+        {
+            Vanish();
+        }
 
-        //RaycastHit hit;
-        //if (Physics.Raycast(new Ray(transform.position,transform.forward), out hit,500.0f))
-        //{
-        //    if (hit.collider.tag == "Player")
-        //    {
-        //        player.GetComponent<PlayerController>().changeSanity(5);
-        //    }
-        //}
+    }
 
+    void Vanish()
+    {
+        moveDistance(20.0f, 0, 20.0f);
+        hasSeen = false;
     }
 }
