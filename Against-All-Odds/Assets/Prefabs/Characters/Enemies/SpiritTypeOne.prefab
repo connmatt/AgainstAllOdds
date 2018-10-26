@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 33977304692109422}
   - component: {fileID: 136699254447247830}
   - component: {fileID: 23165960901645196}
-  - component: {fileID: 114154770917145902}
   - component: {fileID: 114223536929290220}
   m_Layer: 0
   m_Name: SpiritTypeOne
@@ -38,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1763397297228466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.99, y: 1.66, z: 94}
+  m_LocalPosition: {x: 13.99, y: 1, z: 94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -85,19 +84,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1763397297228466}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114154770917145902
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1763397297228466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c20aac2edccbd94395ce0989fe8c052, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  speed: 0.5
 --- !u!114 &114223536929290220
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -109,6 +95,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef501097fa5f5ea4eaf3980efba36801, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  speed: 2
+  waypoints:
+  - {fileID: 1015389430621512, guid: c87a62a64a2014940a2e7bd53586ffe1, type: 2}
+  - {fileID: 1443691292910886, guid: c87a62a64a2014940a2e7bd53586ffe1, type: 2}
+  - {fileID: 1874593149963292, guid: c87a62a64a2014940a2e7bd53586ffe1, type: 2}
+  - {fileID: 1343234902359214, guid: c87a62a64a2014940a2e7bd53586ffe1, type: 2}
+  - {fileID: 1989542509286360, guid: c87a62a64a2014940a2e7bd53586ffe1, type: 2}
+  - {fileID: 1072928284915410, guid: c87a62a64a2014940a2e7bd53586ffe1, type: 2}
+  - {fileID: 1952618572956166, guid: c87a62a64a2014940a2e7bd53586ffe1, type: 2}
+  - {fileID: 1227346815406414, guid: c87a62a64a2014940a2e7bd53586ffe1, type: 2}
+  index: 0
+  gotoIndex: 0
+  heightIncrease: 0.3
 --- !u!136 &136699254447247830
 CapsuleCollider:
   m_ObjectHideFlags: 1

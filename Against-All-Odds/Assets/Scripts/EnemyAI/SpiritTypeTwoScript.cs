@@ -30,7 +30,7 @@ public class SpiritTypeTwoScript : EnemyMoveScript {
 
     void Vanish()
     {
-        moveDistance(20.0f, 0, 20.0f);
+        base.startingPoint();
         hasSeen = false;
     }
 }
