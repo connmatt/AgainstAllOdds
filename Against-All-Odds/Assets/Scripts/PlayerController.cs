@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour {
     public GameObject phoneCanvas;
     */
     public bool paused;
+    public bool crouching;
+    public CharacterController character;
     public int sanity, health;
 	// Use this for initialization
 	void Start () {
@@ -20,6 +22,8 @@ public class PlayerController : MonoBehaviour {
         //phoneCamera = GameObject.FindGameObjectWithTag("phoneCamera");
         GameObject.Find("Sanity").GetComponent<UnityEngine.UI.Text>().text = "Sanity: " + sanity;
         GameObject.Find("Health").GetComponent<UnityEngine.UI.Text>().text = "Health: " + health;
+        character = GetComponent<CharacterController>();
+        crouching = false;
     }
 	
 	// Update is called once per frame
@@ -52,13 +56,32 @@ public class PlayerController : MonoBehaviour {
                 hit.collider.gameObject.GetComponent<SpiritTypeTwoScript>().hasSeen = true;
             }
         }
+        if (Input.GetKeyDown(KeyCode.C)&&!crouching)
+        {
+            crouching = true;
+            character.height = 0.9f;
+            transform.position = new Vector3(transform.position.x, transform.position.y-0.9f, transform.position.z);
+        }
+        else if (Input.GetKeyDown(KeyCode.C)&&crouching)
+        {
+            crouching = false;
+            character.height = 1.8f;
+            transform.position = new Vector3(transform.position.x, transform.position.y + 0.9f, transform.position.z);
+        }
     }
 
     public void changeSanity(int s)
     {
         if (sanity < 100)
         {
-            sanity += s;
+            if (sanity + s > 100)
+            {
+                sanity = 100;
+            }
+            else
+            {
+                sanity += s;
+            }
             GameObject.Find("Sanity").GetComponent<UnityEngine.UI.Text>().text = "Sanity: " + sanity;
         }
     }
@@ -67,7 +90,14 @@ public class PlayerController : MonoBehaviour {
     {
         if (health>0)
         {
-            health += h;
+            if (health + h < 0)
+            {
+                health = 0;
+            }
+            else
+            {
+                health += h;
+            }
             GameObject.Find("Health").GetComponent<UnityEngine.UI.Text>().text = "Health: " + health;
         }
     }

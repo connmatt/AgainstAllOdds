@@ -5,33 +5,48 @@ using UnityEngine;
 public class WendigoScript : EnemyMoveScript {
 
     public bool soundTriggered;
-    public GameObject player;
+    private GameObject player;
+    public bool stopping;
 
 	// Use this for initialization
 	protected override void Start () {
         base.Start();
         soundTriggered = false;
+        stopping = false;
         player = GameObject.FindWithTag("Player");
 	}
 	
 	// Update is called once per frame
 	protected override void Update () {
-        base.Update();
-        if (soundTriggered)
+        if (!stopping)
         {
-            float step = speed * Time.deltaTime;
-            this.transform.position = Vector3.MoveTowards(transform.position,
-                new Vector3(player.transform.position.x,
-                            transform.position.y,
-                            player.transform.position.z), step);
+            base.Update();
         }
+        if ((!soundTriggered)&&(player.GetComponent<PlayerController>().crouching == false)&&(Vector3.Distance(transform.position,player.transform.position)<=7f))
+        {
+            soundTriggered = true;
+            base.target = GameObject.FindWithTag("Player");
+        }
+        /*else if((soundTriggered)&&(player.GetComponent<PlayerController>().crouching == true) || (Vector3.Distance(transform.position, player.transform.position) > 7f))
+        {
+            soundTriggered = false;
+            base.assignNewIndex();
+        }*/
 	}
 
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.transform.tag == "Player") {
             other.gameObject.GetComponent<PlayerController>().changeHealth(-15);
+            StartCoroutine(wendigoStop());
         }
+    }
+
+    IEnumerator wendigoStop()
+    {
+        stopping = true;
+        yield return new WaitForSeconds(5f);
+        stopping = false;
     }
 
 }
