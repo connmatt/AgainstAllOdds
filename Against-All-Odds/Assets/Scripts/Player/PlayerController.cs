@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour {
         if (sanity < 100)
         {
             sanity += s;
+
             GameObject.Find("Sanity").GetComponent<UnityEngine.UI.Text>().text = "Sanity: " + sanity;
         }
     }
