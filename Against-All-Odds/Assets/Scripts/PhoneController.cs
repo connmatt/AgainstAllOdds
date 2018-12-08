@@ -5,34 +5,32 @@ using UnityEngine;
 
 public class PhoneController : MonoBehaviour {
     private PlayerController playerController;
-    public Material cloudPhoneBackground;
-    public Material backgroundNo2;
+    public Texture[] m_Textures;
+
+    Renderer m_Renderer;
+
     int timer = 100;
     // Use this for initialization
     void Start () {
-        Debug.Log(cloudPhoneBackground.color);
-        Debug.Log(cloudPhoneBackground.shader);
-        //Debug.Log(cloudPhoneBackground.SetTexture();
-	}
+        m_Renderer = GetComponent<Renderer>();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
-
-        //timer--;
-        //Debug.Log(timer);
-        //phoneObject.material = backgroundNo2;
-        //phoneObject.material = cloudPhoneBackground;
-        //if(timer == 0)
-        //{
-        //    if(phoneObject.material == cloudPhoneBackground)
-        //    {
-        //        phoneObject.material = backgroundNo2;
-        //    }
-        //    else
-        //    {
-        //        phoneObject.material = cloudPhoneBackground;
-        //    }
-        //    timer = 100;
-        //}
-	}
+        Debug.Log(Input.GetMouseButtonDown(1));
+        Debug.Log(m_Renderer.material.mainTexture.Equals(m_Textures[0]));
+        m_Renderer.material.SetTexture("smartphone_screen", m_Textures[0]);
+        if (Input.GetMouseButtonDown(1))
+        {
+            if(m_Renderer.material.mainTexture.Equals("smartphone_screen"))
+            {
+                m_Renderer.material.SetTexture("smartphone_screen_2", m_Textures[0]);
+            }
+            else
+            {
+                m_Renderer.material.SetTexture("smartphone_screen", m_Textures[0]);
+            }
+        }
+    }
 }
